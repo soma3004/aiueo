@@ -2,6 +2,8 @@
 import streamlit as st
 
 st.title("bmi計算アプリ")
+
+st.header("こんにちは")
 st.write("体重を入力してください")
 
 weight = st.number_input("体重を入力",min_value=1.0)
