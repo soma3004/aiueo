@@ -1,9 +1,10 @@
 # Streamlitライブラリをインポート
 import streamlit as st
 
-st.title("bmi計算アプリ")
+selected_item = st.selectbox('select item',['A','B','C'])
 
+st.text(selected_item)
 
-flgcheck_A = st.checkbox('checkbox A')
-flgcheck_B = st.checkbox('checkbox B')
+selected_item = st.selectbox('select_item',['A'],['B'],['c'], index=1)
 
+st.text('selected_item')
