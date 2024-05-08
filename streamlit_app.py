@@ -8,5 +8,5 @@ weight = st.number_input("体重を入力")
 
 height = st.number_input("身長を入力")
 
-bmi = weight / (height*height)
+bmi = weight/(height*height)
 st.write("あなたのbmiは"+str(bmi)+"kgです")
