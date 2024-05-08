@@ -3,14 +3,11 @@ import streamlit as st
 
 st.title("bmi計算アプリ")
 
-st.header("こんにちは")
 
-st.subheader("こんにちは")
-st.write("体重を入力してください")
+flgcheck_A = st.checkbox('checkbox A')
+flgcheck_B = st.checkbox('checkbox B')
 
-weight = st.number_input("体重を入力",min_value=1.0)
-
-height = st.number_input("身長を入力",min_value=1.0)
-
-bmi = weight/(height*height)
-st.write("あなたのbmiは"+str(bmi)+"です")
+flgcheck_A:
+st.text('checkbox A has checed')
+flgcheck_B:
+st.text('checkbox B has checked')
