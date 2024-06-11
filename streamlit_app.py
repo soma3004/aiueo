@@ -1,5 +1,4 @@
 # Streamlitライブラリをインポート
 import streamlit as st 
-st.title('数学公式')
+st.title('二桁の掛け算')
 
-print(A**M)
