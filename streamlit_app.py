@@ -8,8 +8,8 @@ import random
 
 def generate_question():
     """ランダムな数学の問題を生成する関数"""
-    num1 = random.randint(1, 20)
-    num2 = random.randint(1, 20)
+    num1 = random.randint(-100,100)
+    num2 = random.randint(-100,100)
     operator = random.choice(['+', '-', '*'])
     
     if operator == '+':
