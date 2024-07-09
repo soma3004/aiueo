@@ -1,16 +1,7 @@
 # Streamlitライブラリをインポート
 # app.py
 
-import streamlit as st
 
-def main():
-    st.title('数学計算')
-    st.write('あ')
-
-    # 例: ユーザーに名前を入力してもらう
-    username = st.text_input('あなたの名前を入力してください')
-
-# app.py
 
 import streamlit as st
 
