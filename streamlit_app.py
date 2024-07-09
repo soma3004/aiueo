@@ -11,4 +11,6 @@ def main():
     st.title('スタート画面のタイトル')
     st.write('ここにスタート画面の説明や指示を書きます。')
 
+   import streamlit as st
+
     if st.button('始める'):
