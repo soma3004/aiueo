@@ -11,10 +11,9 @@ import random
 def generate_question():
     num1 = random.randint(1, 100)
     num2 = random.randint(1, 100)
-    return num1, num2
-
+   
 def main():
-    st.title('足し算問題')
+    st.title('問題')
     st.write('以下の問題に答えてください：')
 
     num1, num2 = generate_question()
