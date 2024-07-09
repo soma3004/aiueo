@@ -3,24 +3,12 @@
 
 # math_quiz_app.py
 
+# app.py
+
 import streamlit as st
-import random
 
-def generate_question():
-    """ランダムな数学の問題を生成する関数"""
-    num1= random.randint(-100,100)
-    num2 = random.randint(-100,100)
-    operator = random.choice(['+', '-', '*'])
-    
-    if operator == '+':
-        answer = num1 + num2
-    elif operator == '-':
-        answer = num1 - num2
-    elif operator == '*':
-        answer = num1 * num2
-    
-    return num1, num2, operator, answer
+def main():
+    st.title('スタート画面のタイトル')
+    st.write('ここにスタート画面の説明や指示を書きます。')
 
-    if st.button('答え合わせ')：
-        if st.wite(answer):
-            
+    if st.button('始める')
