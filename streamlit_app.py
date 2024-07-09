@@ -13,4 +13,4 @@ def main():
 
 import streamlit as st
 
- if st.button('始める'):
+if st.button('始める'):
