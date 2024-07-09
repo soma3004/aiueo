@@ -10,7 +10,4 @@ def main():
     # 例: ユーザーに名前を入力してもらう
     username = st.text_input('あなたの名前を入力してください')
 
-    st.write(f'こんにちは、{username}さん！')
-
-if __name__ == '__main__':
-    main()
+ 
