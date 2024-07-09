@@ -21,16 +21,7 @@ def main():
 
     answer = st.text_input(f'{num1} + {num2} =', '')
 
-    if answer:
-        try:
-            user_answer = int(answer)
-            correct_answer = num1 + num2
-            if user_answer == correct_answer:
-                st.write('正解です！')
-            else:
-                st.write(f'不正解です。正解は {correct_answer} です。')
-        except ValueError:
-            st.write('数値を入力してください。')
+   
 
 if __name__ == '__main__':
     main()
