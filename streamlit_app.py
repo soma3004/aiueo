@@ -3,21 +3,21 @@ import random
 import numpy as np
 
 def generate_quadratic_equation():
-    a = random.randint(1, 5) * random.choice([-1, 1])
-    b = random.randint(1, 10) * random.choice([-1, 1])
-    c = random.randint(1, 10) * random.choice([-1, 1])
+    a = random.randint(1,10) * random.choice([0,2])
+    b = random.randint(1, 10) * random.choice([0,2])
+    c = random.randint(1, 10) * random.choice([0,2])
     return a, b, c
 
 def main():
     st.title('')
-    st.write('以下の二次方程式の解を求めてください：')
+    st.write('以下の二次方程式の解の個数を求めてください：')
 
     a, b, c = generate_quadratic_equation()
 
     st.latex(f"{a}x^2 + {b}x + {c} = 0")
 
-    st.write('解を入力してください（小数も可）：')
-    answer = st.text_input('x =', '')
+    st.write('解を入力してください：')
+    answer = st.text_input('', '個')
 
     if answer:
         try:
