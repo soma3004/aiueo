@@ -9,7 +9,7 @@ def generate_quadratic_equation():
     return a, b, c
 
 def main():
-    st.title('二次方程式の問題')
+    st.title('')
     st.write('以下の二次方程式の解を求めてください：')
 
     a, b, c = generate_quadratic_equation()
