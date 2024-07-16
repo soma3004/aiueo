@@ -16,7 +16,7 @@ def main():
 
     st.latex(f"{a}x^2 + {b}x + {c} = 0")
 
-    st.write('解を入力してください：')
+    st.write('解の個数を入力してください：')
     answer = st.text_input('', '',)
 
     if answer:
@@ -25,7 +25,7 @@ def main():
             # Solve the quadratic equation
             discriminant = b**2 - 4*a*c
             if discriminant < 0:
-                st.write('実数解はありません。')
+                st.write('実数解は0個です。')
             else:
                 sqrt_discriminant = np.sqrt(discriminant)
                 x1 = (-b + sqrt_discriminant) / (2*a)
