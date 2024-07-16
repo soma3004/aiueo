@@ -36,5 +36,3 @@ def main():
         except ValueError:
             st.write('数値を入力してください。')
 
-if __name__ == '__main__':
-    main()
