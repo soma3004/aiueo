@@ -26,16 +26,13 @@ def main():
             discriminant = b**2 - 4*a*c
             if discriminant < 0:
                 st.write('実数解は0個です。')
+            elif discriminant == 0: # type: ignore
+                st.write('実数解は1個です。')
             else:
-                sqrt_discriminant = np.sqrt(discriminant)
-                x1 = (-b + sqrt_discriminant) / (2*a)
-                x2 = (-b - sqrt_discriminant) / (2*a)
-
-                if np.isclose(user_answer, x1) or np.isclose(user_answer, x2):
-                    st.write('正解です！')
-                else:
-                    st.write('不正解です。')
-                    st.write(f'正解は x = {x1} または x = {x2} です。')
+                discriminant > 0
+                st.write('実数解は2個です。')
+            
+                
         except ValueError:
             st.write('数値を入力してください。')
 
