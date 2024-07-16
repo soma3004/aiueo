@@ -17,7 +17,7 @@ def main():
     st.latex(f"{a}x^2 + {b}x + {c} = 0")
 
     st.write('解を入力してください：')
-    answer = st.text_input('', '','個')
+    answer = st.text_input('', '',)
 
     if answer:
         try:
