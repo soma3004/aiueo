@@ -19,6 +19,9 @@ def main():
     st.write('解の個数を入力してください：')
     answer = st.text_input('', '',)
 
+    st._bottom("0")
+    
+
     if answer:
         try:
             user_answer = float(answer)
