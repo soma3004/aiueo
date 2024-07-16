@@ -23,8 +23,6 @@ def main():
 
     if answer:
         try:
-            user_answer = float(answer)
-            # Solve the quadratic equation
             discriminant = b**2 - 4*a*c
             if discriminant < 0:
                 st.write('実数解は0個です。')
