@@ -11,5 +11,6 @@ def generate_quadratic_equation():
 problem = {
     "question":"a × b",
     "answer":"ab"
+    
 
 }
