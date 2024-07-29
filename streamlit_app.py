@@ -15,7 +15,7 @@ def check_answer(user_answer):
     return user_answer.strip() == question["answer"]
 
 st.title("掛け算")
-st.write(question["question"])
+st.write(f"計算式:{question}")
 user_input = st.text_input("式の答えを入力してください。")
 
 if st.button("答え合わせ"):
