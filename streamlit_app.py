@@ -1,23 +1,21 @@
 import streamlit as st
 import random
-import numpy as np
 
-def generate_quadratic_equation():
-    a = random.randint(1,10) * random.choice([1,2])
-    b = random.randint(1, 10) * random.choice([1,2])
-    c = random.randint(1, 10) * random.choice([1,2])
-    return a, b, c
+def generate_problem():
+    num1 = random.randint(1, 10) 
+    num2 = random.randint(1, 10)
+    question = f"{num1}*{num2}"
+    answer = num1*num2
+    return question,answer
 
-problem = {
-    "question":"a × b",
-    "answer":"ab"
-}
+question,answer = generate_problem()
+
 
 def check_answer(user_answer):
-    return user_answer.strip() == problem["answer"]
+    return user_answer.strip() == question["answer"]
 
 st.title("掛け算")
-st.write(problem["question"])
+st.write(question["question"])
 user_input = st.text_input("式の答えを入力してください。")
 
 if st.button("答え合わせ"):
@@ -28,5 +26,5 @@ if st.button("答え合わせ"):
             st.error("不正解です。、もう一度試してみてください。")
     else:
         st.warning("回答を入力してください。")
-        
+
         
