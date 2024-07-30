@@ -11,8 +11,8 @@ if 'current_problem_index' not in st.session_state:
 if 'problems' not in st.session_state:
     st.session_state.problems = [(random.randint(1, 100), random.randint(1, 100)) for _ in range(NUM_PROBLEMS)]
 
-'user_input' not in st.session_state
-st.session_state.user_input = ''
+if 'user_input' not in st.session_state:
+    st.session_state.user_input = ''
 
 if 'current_answer' not in st.session_state:
     # 問題の最初の答えをセットアップする
@@ -65,4 +65,3 @@ if st.button("次の問題"):
 
 # アプリの説明
 st.write("このアプリでは、ランダムに生成された掛け算の問題を解くことができます。正しい答えを入力して「答え合わせ」ボタンをクリックしてください。問題に正解すると、次の問題が表示されます。")
-
