@@ -33,7 +33,7 @@ def next_problem():
     st.session_state.current_answer = current_problem[0] * current_problem[1]
 
     # ユーザーの入力をリセットする
-    st.session_state.user_input = ''
+    st.session_state.user_input = ""
 
 # Streamlitアプリのタイトル
 st.title("")
