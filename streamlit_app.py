@@ -63,34 +63,3 @@ if st.button("答え合わせ"):
 if st.button("次の問題"):
     next_problem()
 
-import streamlit as st
-
-def continued_fraction(p, q):
-    a_list = []
-    while q != 0:
-        a = p // q
-        a_list.append(a)
-        p, q = q, p - a * q
-    return a_list
-
-def approximate_fraction(p, q, n):
-    a_list = continued_fraction(p, q)
-    approx = a_list[0]
-    for i in range(1, n):
-        approx = a_list[i] + 1 / approx
-    return approx
-
-def main():
-    st.title('分数の近似値計算')
-
-    numerator = st.number_input('分子を入力してください', min_value=1, step=1)
-    denominator = st.number_input('分母を入力してください', min_value=1, step=1)
-    approximations = st.number_input('近似の反復回数を入力してください', min_value=1, step=1)
-
-    if st.button('計算'):
-        if numerator and denominator and approximations:
-            approx_value = approximate_fraction(numerator, denominator, int(approximations))
-            st.success(f"分数 {numerator}/{denominator} の近似値は {approx_value:.8f}")
-
-if __name__ == '__main__':
-    main()
