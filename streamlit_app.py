@@ -28,7 +28,7 @@ def next_problem():
     st.session_state.user_input = ''
 
 # Streamlitアプリのタイトル
-st.title("掛け算の問題")
+st.title("")
 
 # 現在の問題を取得
 current_problem = st.session_state.problems[st.session_state.current_problem_index]
