@@ -9,7 +9,7 @@ if 'current_problem_index' not in st.session_state:
     st.session_state.current_problem_index = 0
 
 if 'problems' not in st.session_state:
-    st.session_state.problems = [(random.randint(1, 1000), random.randint(1, 1000)) for _ in range(NUM_PROBLEMS)]
+    st.session_state.problems = [(random.randint(10, 100), random.randint(10, 100)) for _ in range(NUM_PROBLEMS)]
 
 if 'user_input' not in st.session_state:
     st.session_state.user_input = ''
