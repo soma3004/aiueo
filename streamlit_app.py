@@ -2,7 +2,7 @@ import streamlit as st
 import random
 
 # 問題数の設定
-NUM_PROBLEMS = 5
+NUM_PROBLEMS = 100
 
 # セッション状態を利用して現在の問題インデックスと問題を保持
 if 'current_problem_index' not in st.session_state:
