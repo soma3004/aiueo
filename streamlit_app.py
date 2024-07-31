@@ -47,7 +47,7 @@ def main():
             st.write(st.session_state.current_question)
             
             # ユーザーの入力
-            user_answer = st.text_input("答えを入力:", key="user_answer")
+            user_answer = st.text_input("答えを入力:", key="user_answer_input")
             
             # ボタンが押されたときの処理
             if st.button("答えをチェック"):
@@ -59,7 +59,6 @@ def main():
 
                 # 次の問題に進む
                 st.session_state.a, st.session_state.b, st.session_state.current_question = new_question()
-                st.session_state.user_answer = ""  # 入力欄をリセット
             
             # 現在のスコアと残り時間の表示
             st.write(f"現在のスコア: {st.session_state.score}")
