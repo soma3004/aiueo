@@ -46,7 +46,7 @@ def main():
                 else:
                     st.error("不正解！")
                 st.session_state.a, st.session_state.b, st.session_state.current_question = new_question()
-            st.write(f"現在のスコア：{st.session_state.scpre}")
+            st.write(f"現在のスコア：{st.session_state.score}")
             st.write(f"残り時間: {max(0, game_duration - int(elapsed_time))}秒")
 
         else:    
