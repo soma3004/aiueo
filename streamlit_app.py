@@ -10,8 +10,8 @@ num_questions = 10
 
 def new_question():
     """新しい掛け算の問題を生成する関数"""
-    a = random.randint(1, 9)
-    b = random.randint(1, 9)
+    a = random.randint(10, 100)
+    b = random.randint(10, 100)
     return a, b, f"{a} × {b} = ?"
 
 def main():
