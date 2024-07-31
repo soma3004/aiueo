@@ -1,65 +1,68 @@
 import streamlit as st
 import random
+import time
 
-# 問題数の設定
-NUM_PROBLEMS = 100
+# アプリのタイトル
+st.title("掛け算タイムアタックゲーム")
 
-# セッション状態を利用して現在の問題インデックスと問題を保持
-if 'current_problem_index' not in st.session_state:
-    st.session_state.current_problem_index = 0
+# ゲームの設定
+num_questions = 10
+score = 0
+question_index = 0
+start_time = None
 
-if 'problems' not in st.session_state:
-    st.session_state.problems = [(random.randint(10, 100), random.randint(10, 100)) for _ in range(NUM_PROBLEMS)]
+def new_question():
+    """新しい掛け算の問題を生成する関数"""
+    global a, b
+    a = random.randint(1, 9)
+    b = random.randint(1, 9)
+    return f"{a} × {b} = ?"
 
-if 'user_input' not in st.session_state:
-    st.session_state.user_input = ''
-
-if 'current_answer' not in st.session_state:
-    # 問題の最初の答えをセットアップする
-    current_problem = st.session_state.problems[st.session_state.current_problem_index]
-    st.session_state.current_answer = current_problem[0] * current_problem[1]
-
-def check_answer(user_answer):
-    return user_answer.strip() == str(st.session_state.current_answer)
-
-def next_problem():
-    if st.session_state.current_problem_index < len(st.session_state.problems) - 1:
-        st.session_state.current_problem_index += 1
+def check_answer(answer):
+    """ユーザーの答えをチェックする関数"""
+    global score, question_index
+    if int(answer) == a * b:
+        score += 1
+        question_index += 1
+        return True
     else:
-        st.session_state.current_problem_index = 0
+        question_index += 1
+        return False
 
-    # 次の問題の答えをセットアップする
-    current_problem = st.session_state.problems[st.session_state.current_problem_index]
-    st.session_state.current_answer = current_problem[0] * current_problem[1]
+def main():
+    global start_time
+    
+    if "start_time" not in st.session_state:
+        st.session_state.start_time = None
+    if "score" not in st.session_state:
+        st.session_state.score = 0
+    if "question_index" not in st.session_state:
+        st.session_state.question_index = 0
 
-    # ユーザーの入力をリセットする
-    st.session_state.user_input = ""
+    if st.session_state.question_index == 0 and st.button("ゲームスタート"):
+        st.session_state.start_time = time.time()
+        st.session_state.score = 0
+        st.session_state.question_index = 1
 
-# Streamlitアプリのタイトル
-st.title("")
-
-# 現在の問題を取得
-current_problem = st.session_state.problems[st.session_state.current_problem_index]
-a, b = current_problem
-
-# 問題を表示
-st.write(f"{a} × {b} = ?")
-
-# ユーザーの入力を受け取る
-user_input = st.text_input("答えを入力してください:", key="user_input")
-
-# 正誤判定とフィードバック
-if st.button("答え合わせ"):
-    if user_input:
-        if check_answer(user_input):
-            st.success("正解です！")
-            next_problem()
+    if st.session_state.question_index > 0:
+        if st.session_state.question_index <= num_questions:
+            question = new_question()
+            user_answer = st.text_input(question, key=f"question_{st.session_state.question_index}")
+            
+            if st.button("答えをチェック"):
+                if check_answer(user_answer):
+                    st.success("正解！")
+                else:
+                    st.error("不正解！")
+                    
+            st.write(f"現在のスコア: {st.session_state.score}")
         else:
-            st.error("不正解です。もう一度試してみてください。")
-    else:
-        st.warning("回答を入力してください。")
+            end_time = time.time()
+            elapsed_time = end_time - st.session_state.start_time
+            st.write(f"ゲーム終了！スコア: {st.session_state.score}")
+            st.write(f"所要時間: {elapsed_time:.2f}秒")
+            if st.button("再スタート"):
+                st.session_state.question_index = 0
 
-# 次の問題に進むためのボタン
-if st.button("次の問題"):
-    next_problem()
-
+if __name__ == "__main__":
+    main()
