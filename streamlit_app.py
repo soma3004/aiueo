@@ -23,14 +23,48 @@ if button_pressed:
         
         st.write(f"問題: {question}")
         
-        user_answer = st.number_input("答えを入力してください:")
-        
-        if st.button("答えをチェック"):
-            if user_answer == answer:
-                st.write("正解です！")
-            else:
-                st.write(f"不正解です。正しい答えは {answer} です。")
+        col1, col2, col3 = st.columns(3)
+    with col1:
+        if st.button('1'):
+            st.session_state.user_answer += '1'
+        if st.button('4'):
+            st.session_state.user_answer += '4'
+        if st.button('7'):
+            st.session_state.user_answer += '7'
+        if st.button('C'):
+            st.session_state.user_answer = ''
+    
+    with col2:
+        if st.button('2'):
+            st.session_state.user_answer += '2'
+        if st.button('5'):
+            st.session_state.user_answer += '5'
+        if st.button('8'):
+            st.session_state.user_answer += '8'
+        if st.button('0'):
+            st.session_state.user_answer += '0'
+    
+    with col3:
+        if st.button('3'):
+            st.session_state.user_answer += '3'
+        if st.button('6'):
+            st.session_state.user_answer += '6'
+        if st.button('9'):
+            st.session_state.user_answer += '9'
+        if st.button('Enter'):
+            st.session_state.checked = True
 
+    st.write(f"入力された答え: {st.session_state.user_answer}")
+
+    # チェックボタン
+    if st.session_state.checked:
+        if st.session_state.user_answer.isdigit():
+            if int(st.session_state.user_answer) == st.session_state.answer:
+                st.success("正解です！")
+            else:
+                st.error(f"不正解です。正しい答えは {st.session_state.answer} です。")
+        else:
+            st.error("無効な入力です。数字のみを入力してください。")
     elif options == "二桁×二桁":
         st.subheader("二桁×二桁のテスト")
         question, answer = generate_random_multiplication_problem(10, 99)
