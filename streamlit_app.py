@@ -23,7 +23,7 @@ if button_pressed:
         
         st.write(f"問題: {question}")
         
-        user_answer = st.number_input("答えを入力してください:", min_value=0, step=1)
+        user_answer = st.number_input("答えを入力してください:")
         
         if st.button("答えをチェック"):
             if user_answer == answer:
