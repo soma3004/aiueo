@@ -27,9 +27,9 @@ if button_pressed:
         
         if st.button("答えをチェック"):
             if user_answer == answer:
-                st.success("正解です！")
+                st.write("正解です！")
             else:
-                st.error(f"不正解です。正しい答えは {answer} です。")
+                st.write(f"不正解です。正しい答えは {answer} です。")
 
     elif options == "二桁×二桁":
         st.subheader("二桁×二桁のテスト")
