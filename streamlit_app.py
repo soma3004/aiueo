@@ -1,12 +1,27 @@
 import streamlit as st
 import random
+b,c,a=random.sample(range(1,100),3)
+b,c,a=sorted([b,c,a], reverse=True)
+
 
 def hannbetusiki():
-    b,c,a=random.sample(range(1,100),3)
-    b,c,a=sorted([b,c,a], reverse=True)
     A=str(a)+"x^2"
     B=str(b)+"x"
     C=str(c)
     st.latex(A+"+"+B+"+"+C)
+
+def answer():
+    st.write("この2次方程式には解が何個ありますか。")
+    kai=b^2-4*a*c
+    if kai > 0:
+        kosuu=2
+    elif kai < 0:
+        kosuu=0
+    else:
+        kosuu=1
+    st.write("答えは"+str(kosuu)+"個です。")
+
 hannbetusiki()
+answer()
+
     
