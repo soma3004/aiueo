@@ -1,7 +1,7 @@
 import streamlit as st
 import random
-b=random.sample(25,50)
-c,a=random.sample(1,25)
+b=random.sample(range(25,50),1)
+c,a=random.sample(range(1,25),2)
 c,a=sorted([c,a], reverse=True)
 
 
