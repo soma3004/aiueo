@@ -7,6 +7,6 @@ def hannbetusiki():
     A=str(a)+"x^2"
     B=str(b)+"x"
     C=str(c)
-    st.latex(A+B+C)
+    st.latex("{A}+{B}+{C}")
 hannbetusiki()
     
