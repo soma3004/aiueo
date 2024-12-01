@@ -5,7 +5,7 @@ def hannbetusiki():
     a,c,b=random.sample(range(1,100),3)
     a,c,b=sorted([a,c,b], reverse=True)
     
-    st.weite(f"a={a},b={b},c={c}")
+    st.write(f"a={a},b={b},c={c}")
     
 hannbetusiki()
     
