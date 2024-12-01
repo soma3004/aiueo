@@ -13,7 +13,7 @@ def hannbetusiki():
 
 def answer():
     st.write("この2次方程式には解が何個ありますか。")
-    kai=b**2-4*a*c
+    kai=b*b-4*a*c
     if kai > 0:
         kosuu=2
     elif kai < 0:
