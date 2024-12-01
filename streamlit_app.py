@@ -6,5 +6,5 @@ def hannbetusiki():
     a,b,c=sorted([a,c,b], reverse=True)
     print(a,b,c)
     
-
+hannbetusiki()
     
