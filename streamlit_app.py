@@ -1,7 +1,8 @@
 import streamlit as st
 import random
-b,c,a=random.sample(range(1,100),3)
-b,c,a=sorted([b,c,a], reverse=True)
+b=random.sample(25,50)
+c,a=random.sample(1,25)
+c,a=sorted([c,a], reverse=True)
 
 
 def hannbetusiki():
